@@ -40,19 +40,26 @@ export default class EmailForm extends React.Component {
     render() {
        return(
             <form onSubmit={this.handleSubmit}>
-                <label>
-                    To (email):
-                    <input type="text" name='toEmail' value={this.state.toEmail || ''} onChange={this.handleChange} />
-                </label>
-                <label>
-                    Subject:
-                    <input type="text" name='subject' value={this.state.subject || ''} onChange={this.handleChange} />
-                </label>
-                <label>
-                    Message:
-                    <input type="text" name='message' value={this.state.message || ''} onChange={this.handleChange} />
-                </label>
-                <input type="submit" value="Submit" />
+                <div className="input-group">
+                    <label>
+                        <span>To (email):</span>
+                        <input type="text" className="form-input" id="field-1" name='toEmail' value={this.state.toEmail || ''} onChange={this.handleChange} />
+                    </label>
+                    {/* <label for="field-1" className="input-meta input-label">Place Name</label> */}
+                </div>
+                <div className="input-group">
+                    <label>
+                        Subject:
+                        <input type="text" className="form-input" name='subject' value={this.state.subject || ''} onChange={this.handleChange} />
+                    </label>
+                </div>
+                <div className="input-group">
+                    <label>
+                        Message:
+                        <input type="text" className="form-input" name='message' value={this.state.message || ''} onChange={this.handleChange} />
+                    </label>
+                </div>
+                <input type="submit" className="submit" value="Submit" />
             </form>
        )
    }
